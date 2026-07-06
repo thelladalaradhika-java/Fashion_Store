@@ -1,0 +1,281 @@
+/* Layout Reset & Dark Background Mix Configuration (Matches Image 2 Body Background) */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #1a1919; /* Dark Background from image 2 */
+    color: #ffffff;            /* White text for visibility */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Component Configuration layout (Stays Green from image 1) */
+.global-header {
+    background-color: #0b3c2c;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.global-header .logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+}
+
+.nav-links a.active-link {
+    border-bottom: 2px solid #10b981;
+    padding-bottom: 4px;
+}
+
+/* Container Space */
+.cart-workspace-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 40px;
+    width: 100%;
+    box-sizing: border-box;
+    flex-grow: 1;
+}
+
+.cart-workspace-container h1 {
+    font-size: 28px;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout Splitting */
+.cart-split-layout {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.cart-items-panel {
+    flex: 2;
+}
+
+/* Dark Card Styling for Table Element (Layout from Image 1, Color from Image 2) */
+.cart-table-element {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #262525; /* Dark surface card color */
+    border: 1px solid #3d3b3b;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cart-table-element th {
+    background-color: #2e2d2d;
+    color: #ffffff;
+    text-align: left;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border-bottom: 2px solid #3d3b3b;
+}
+
+.cart-table-element td {
+    padding: 20px 15px;
+    border-bottom: 1px solid #3d3b3b;
+    vertical-align: middle;
+}
+
+.table-product-cell {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.table-product-cell img {
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    background-color: #3d3b3b;
+    border-radius: 6px;
+}
+
+.table-product-cell h4 {
+    margin: 0 0 4px 0;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.table-product-cell p {
+    margin: 0;
+    font-size: 13px;
+    color: #a0aec0;
+}
+
+/* Size Badges Styling */
+.badge-size-indicator {
+    background-color: #3d3b3b;
+    color: #ffffff;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Interactive Quantity Stepper System with Green/Mint highlights from image 2 */
+.quantity-stepper-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #4a5568;
+    background-color: #1a1919;
+    border-radius: 20px;
+    width: fit-content;
+    overflow: hidden;
+}
+
+.quantity-stepper-control button {
+    background: none;
+    border: none;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #10b981; /* Green color match from image 2 */
+    font-size: 16px;
+}
+
+.quantity-stepper-control button:hover {
+    background-color: #2d2d2d;
+}
+
+.quantity-stepper-control input {
+    width: 35px;
+    text-align: center;
+    border: none;
+    background: none;
+    font-size: 13px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.calculated-price-cell {
+    font-weight: bold;
+    color: #10b981; /* Neon green subtotal font */
+}
+
+/* Remove Text Button */
+.btn-remove-item {
+    background: none;
+    border: none;
+    color: #ef4444; /* Standard alert color for delete action */
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-remove-item:hover {
+    text-decoration: underline;
+}
+
+/* Dark Card Summary Layout Structure */
+.cart-summary-panel {
+    flex: 1;
+    background-color: #262525;
+    border: 1px solid #3d3b3b;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.cart-summary-panel h3 {
+    margin: 0 0 20px 0;
+    color: #ffffff;
+    font-size: 18px;
+    border-bottom: 1px solid #3d3b3b;
+    padding-bottom: 10px;
+}
+
+.summary-row-line {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #cbd5e0;
+    margin-bottom: 12px;
+}
+
+.summary-divider {
+    border: 0;
+    border-top: 1px solid #3d3b3b;
+    margin: 15px 0;
+}
+
+.summary-row-line.total-highlight {
+    font-size: 16px;
+    font-weight: bold;
+    color: #10b981; /* Highlights target total amount clearly */
+}
+
+/* Checkout Button matching your image 2 design scheme */
+.btn-proceed-checkout {
+    width: 100%;
+    background-color: #10b981; /* Mint green button */
+    color: #1a1919;
+    border: none;
+    padding: 14px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: opacity 0.2s;
+}
+
+.btn-proceed-checkout:hover {
+    opacity: 0.9;
+}
+
+.btn-proceed-checkout:disabled {
+    background-color: #4a5568;
+    color: #718096;
+    cursor: not-allowed;
+}
+
+.empty-cart-state {
+    text-align: center;
+    padding: 60px 0;
+    color: #a0aec0;
+}
+
+.btn-shop-now {
+    display: inline-block;
+    background-color: #10b981;
+    color: #1a1919;
+    text-decoration: none;
+    padding: 10px 24px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Base Footer Section Alignment layout */
+.global-footer {
+    background-color: #0b3c2c;
+    padding: 24px 40px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.global-footer a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 13px;
+}

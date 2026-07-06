@@ -1,0 +1,205 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Alignment matching standard layout */
+.global-header {
+    background-color: #0b3c2c;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.global-header .logo {
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 24px;
+    font-size: 14px;
+}
+
+/* Main Container Frame Split */
+.checkout-main-frame {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 40px;
+}
+
+/* Card Structures */
+.checkout-form-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.summary-sticky-box {
+    background-color: #1a1a1a;
+    border: 1px solid #2d2d30;
+    border-radius: 12px;
+    padding: 24px;
+    position: sticky;
+    top: 40px;
+}
+
+.summary-sticky-box h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+/* Input Styles */
+.input-row {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 16px;
+    text-align: left;
+}
+.input-row label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #cbd5e0;
+}
+.input-row input {
+    background-color: #1a1a1a;
+    border: 1px solid #3a3a3c;
+    color: #ffffff;
+    padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+.input-row input:focus {
+    border-color: #10b981;
+}
+
+.input-split-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* Payment Layout cards matching requested look */
+.payment-selection-header {
+    margin: 24px 0 12px 0;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    color: #ffffff;
+}
+.payment-option-card {
+    background-color: #1a1a1a;
+    border: 1px solid #3a3a3c;
+    padding: 16px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.radio-label-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+    width: 100%;
+}
+.radio-label-wrapper input[type="radio"] {
+    accent-color: #10b981;
+    width: 18px;
+    height: 18px;
+}
+.custom-radio-text {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Interactive Action Buttons */
+.btn-place-order {
+    background-color: #0b3c2c;
+    color: #ffffff;
+    border: 1px solid #10b981;
+    padding: 16px;
+    width: 100%;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.2s ease;
+}
+.btn-place-order:hover {
+    background-color: #0f523d;
+}
+
+.btn-back-cart {
+    display: block;
+    text-align: center;
+    background: transparent;
+    color: #a0aec0;
+    text-decoration: none;
+    font-size: 14px;
+    margin-top: 15px;
+}
+.btn-back-cart:hover {
+    color: #ffffff;
+}
+
+/* Summary List Layout */
+.summary-divider {
+    border: 0;
+    border-top: 1px solid #2d2d30;
+    margin: 16px 0;
+}
+.summary-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+.item-meta-details p {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: #a0aec0;
+}
+.total-amount-display-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Global Footer Layout Alignment */
+.global-footer {
+    background-color: #0b3c2c;
+    padding: 24px 40px;
+    color: #cbd5e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-top: auto;
+}
+.global-footer a {
+    color: #cbd5e0;
+    text-decoration: none;
+    margin-left: 20px;
+}

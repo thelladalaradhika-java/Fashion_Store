@@ -1,0 +1,219 @@
+/* Universal Base Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333;
+}
+
+/* Navbar Layout */
+.navbar {
+    background-color: #013220; /* Deep Forest Green */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    color: #ffffff;
+}
+
+.navbar .logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.navbar .search-bar {
+    display: flex;
+    width: 40%;
+}
+
+.navbar .search-bar input {
+    width: 100%;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    outline: none;
+}
+
+.navbar .search-bar button {
+    background-color: #00bfa5; /* Teal Search Button */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.navbar .nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Hero Section Layout */
+.hero-container {
+    padding: 30px 40px;
+}
+
+.hero-banner {
+    background-color: #e8f5e9; /* Light Mint Tint background */
+    border-radius: 12px;
+    padding: 50px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.hero-text {
+    max-width: 60%;
+}
+
+.hero-text h1 {
+    color: #013220;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.hero-text p {
+    color: #555;
+    font-size: 14px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.btn-shop {
+    display: inline-block;
+    background-color: #013220;
+    color: white;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.hero-badge {
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    font-weight: 600;
+    color: #333;
+}
+
+/* Grids and Main Typography Content */
+.main-content {
+    padding: 20px 40px;
+}
+
+.section-container {
+    margin-bottom: 40px;
+}
+
+.section-title {
+    color: #013220;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.grid-container {
+    display: grid;
+    gap: 20px;
+}
+
+.categories-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.products-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* Structural Card Base Layout */
+.card {
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+/* Category Variant Styles */
+.category-card h3 {
+    color: #013220;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.category-card p {
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.explore-link {
+    color: #00bfa5;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Product Variant Styles */
+.product-card {
+    text-align: left;
+}
+
+.image-placeholder {
+    background-color: #e8f5e9;
+    height: 160px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.product-name {
+    font-size: 15px;
+    color: #000;
+    margin-bottom: 5px;
+}
+
+.product-line {
+    color: #888;
+    font-size: 11px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-weight: bold;
+    color: #000;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.btn-view {
+    display: block;
+    background-color: #013220;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 0;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
