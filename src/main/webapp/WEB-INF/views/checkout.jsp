@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <title>Fashion Store - Checkout</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/checkout.css">
+    <link rel="icon" type="image/jpeg" href="${pageContext.request.contextPath}/assets/images/img/favicon.jpg">
 </head>
 <body>
 
@@ -91,18 +92,31 @@
                             <strong><%= item.getName() %></strong><br>
                             <span style="font-size:12px; color:#94a3b8;">Qty: <%= item.getQuantity() %></span>
                         </div>
-                        <div>₹ <%= item.getPrice() * item.getQuantity() %></div>
+                        <div>₹ <%= String.format("%.2f", item.getPrice() * item.getQuantity()) %></div>
                     </div>
                 <% 
                         }
                     } 
-                    double delivery = subtotal > 0 ? 100.0 : 0.0;
+                    // 🌟 FIXED: Delivery fee set to ₹200.00 matching CartServlet calculation exactly
+                    double delivery = subtotal > 0 ? 200.0 : 0.0;
                     double total = subtotal + delivery;
                 %>
                 <hr>
-                <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:18px; margin-top:15px;">
+                
+                <!-- 🌟 ADDED: Transparent itemized summary lines -->
+                <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:14px; color:#cbd5e1;">
+                    <div>Items Subtotal</div>
+                    <div>₹ <%= String.format("%.2f", subtotal) %></div>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:14px; color:#cbd5e1;">
+                    <div>Delivery & Handling Fee</div>
+                    <div>₹ <%= String.format("%.2f", delivery) %></div>
+                </div>
+                
+                <hr>
+                <div style="display:flex; justify-content:space-between; font-weight:bold; font-size:18px; margin-top:12px; color:#10b981;">
                     <div>Total Amount</div>
-                    <div>₹ <%= total %></div>
+                    <div>₹ <%= String.format("%.2f", total) %></div>
                 </div>
             </div>
         </div>
