@@ -76,6 +76,12 @@
                     <form action="${pageContext.request.contextPath}/cart/add" method="POST" style="margin-top: 30px;">
                         <input type="hidden" name="productId" value="<%= item.getId() %>">
                         
+                        <!-- 🌟 ADDED: Dynamic product attribute hidden inputs -->
+                        <input type="hidden" name="productName" value="<%= item.getName() %>">
+                        <input type="hidden" name="productBrand" value="<%= item.getBrand() %>">
+                        <input type="hidden" name="productPrice" value="<%= item.getPrice() %>">
+                        <input type="hidden" name="productImage" value="<%= mainImg %>">
+                        
                         <input type="hidden" id="selectedSizeInput" name="selectedSize" value="M">
                         
                         <div class="cta-button-deck">
