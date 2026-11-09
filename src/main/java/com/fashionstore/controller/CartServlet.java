@@ -29,8 +29,8 @@ public class CartServlet extends HttpServlet {
             subtotal += item.getPrice() * item.getQuantity();
         }
         
-        // Match standard structural fees
-        double deliveryCharges = subtotal > 0 ? 99.0 : 0.0; 
+        // 🌟 UPDATED: Match explicit delivery & handling fee (₹200.00)
+        double deliveryCharges = subtotal > 0 ? 200.0 : 0.0; 
         double totalCharges = subtotal + deliveryCharges;
 
         request.setAttribute("subtotal", subtotal);
@@ -57,19 +57,36 @@ public class CartServlet extends HttpServlet {
         if ("/add".equals(pathInfo)) {
             int productId = Integer.parseInt(request.getParameter("productId"));
             String size = request.getParameter("selectedSize");
-            if (size == null) size = "M";
+            if (size == null || size.trim().isEmpty()) size = "M";
 
-            // 🌟 FIXED: Read dynamic parameters from the product page instead of hardcoding ID 1 and ID 2
+            // Read dynamic parameters passed from the product details form
             String pName = request.getParameter("productName");
             String pBrand = request.getParameter("productBrand");
             String pPriceStr = request.getParameter("productPrice");
             String pImage = request.getParameter("productImage");
 
-            // Fallback default values if parameters aren't passed from form elements
-            if (pName == null) pName = (productId == 2) ? "Blue Slim Fit Jeans" : "Black Casual Shirt";
-            if (pBrand == null) pBrand = (productId == 2) ? "Levis" : "Puma";
-            double price = (pPriceStr != null) ? Double.parseDouble(pPriceStr) : ((productId == 2) ? 960.00 : 450.00);
-            if (pImage == null) pImage = (productId == 2) ? "jeans.jpg" : "shirt.jpg";
+            // 🌟 FIXED: Dynamic fallbacks ensuring each product ID is treated uniquely
+            if (pName == null || pName.trim().isEmpty()) {
+                pName = (productId == 2) ? "Blue Slim Fit Jeans" : (productId == 1 ? "Black Casual Shirt" : "Product #" + productId);
+            }
+            if (pBrand == null || pBrand.trim().isEmpty()) {
+                pBrand = (productId == 2) ? "Levis" : (productId == 1 ? "Puma" : "Fashion Store");
+            }
+            
+            double price = 0.0;
+            if (pPriceStr != null && !pPriceStr.trim().isEmpty()) {
+                try {
+                    price = Double.parseDouble(pPriceStr.trim());
+                } catch (NumberFormatException e) {
+                    price = (productId == 2) ? 960.00 : 450.00;
+                }
+            } else {
+                price = (productId == 2) ? 960.00 : 450.00;
+            }
+            
+            if (pImage == null || pImage.trim().isEmpty()) {
+                pImage = (productId == 2) ? "jeans.jpg" : "shirt.jpg";
+            }
 
             CartItem newItem = new CartItem(productId, pName, pBrand, price, size, 1, pImage);
 
@@ -83,7 +100,7 @@ public class CartServlet extends HttpServlet {
                 }
             }
             if (!exists) {
-                cart.add(newItem); // 🌟 This will now add a completely separate unique line item!
+                cart.add(newItem); // Adds unique selected product as a separate line item
             }
 
         } else if ("/update".equals(pathInfo)) {
@@ -92,7 +109,7 @@ public class CartServlet extends HttpServlet {
             int quantity = Integer.parseInt(request.getParameter("quantity"));
 
             for (CartItem item : cart) {
-                if (item.getId() == productId && item.getSize().equals(size)) {
+                if (item.getId() == productId && item.getSize().equalsIgnoreCase(size)) {
                     if (quantity > 0) {
                         item.setQuantity(quantity);
                     }
@@ -104,7 +121,7 @@ public class CartServlet extends HttpServlet {
             int productId = Integer.parseInt(request.getParameter("productId"));
             String size = request.getParameter("size");
 
-            cart.removeIf(item -> item.getId() == productId && item.getSize().equals(size));
+            cart.removeIf(item -> item.getId() == productId && item.getSize().equalsIgnoreCase(size));
         }
 
         // Force browser context back to Servlet doGet execution cycle method 
