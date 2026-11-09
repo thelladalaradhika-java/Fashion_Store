@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ page import="com.fashionstore.controller.CartServlet.CartItem" %>
-<link rel="icon" type="image/jpeg" href="${pageContext.request.contextPath}/assets/images/img/favicon.jpg">
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Fashion Store - Shopping Cart</title>
     <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/assets/css/cart.css">
+    <link rel="icon" type="image/jpeg" href="${pageContext.request.contextPath}/assets/images/img/favicon.jpg">
 </head>
 <body>
 
@@ -103,7 +103,8 @@
                     <span>₹ <%= String.format("%.2f", request.getAttribute("subtotal") != null ? (Double)request.getAttribute("subtotal") : 0.0) %></span>
                 </div>
                 <div class="summary-row-line">
-                    <span>Standard Delivery</span>
+                    <!-- 🌟 UPDATED LINE ITEM DESCRIPTION -->
+                    <span>Delivery & Handling Fee</span>
                     <span>₹ <%= String.format("%.2f", request.getAttribute("deliveryCharges") != null ? (Double)request.getAttribute("deliveryCharges") : 0.0) %></span>
                 </div>
                 <hr class="summary-divider" />
@@ -112,7 +113,6 @@
                     <span>₹ <%= String.format("%.2f", request.getAttribute("totalCharges") != null ? (Double)request.getAttribute("totalCharges") : 0.0) %></span>
                 </div>
                 
-                <%-- WIRED UP LINK LINK TO SEND THE USER TO THE CHECKOUT FLOW --%>
                 <% if (cart != null && !cart.isEmpty()) { %>
                     <a href="${pageContext.request.contextPath}/checkout" style="text-decoration: none; display: block; width: 100%;">
                         <button type="button" class="btn-proceed-checkout" style="width: 100%; cursor: pointer;">Proceed to Secure Checkout</button>
