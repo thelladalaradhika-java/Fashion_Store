@@ -8,7 +8,7 @@ public class DBConnection {
     // URL pointing to your local MySQL instance and your 'fashion_store' database
     private static final String URL = "jdbc:mysql://localhost:3306/fashion_store?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
     private static final String USER = "root"; 
-    private static final String PASSWORD = "Radhikamohan@02"; // Your exact password configured here
+    private static final String PASSWORD = ""; // Your exact password configured here
 
     static {
         try {
