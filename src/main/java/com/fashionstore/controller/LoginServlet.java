@@ -18,7 +18,7 @@ public class LoginServlet extends HttpServlet {
     
     private static final String DB_URL = "jdbc:mysql://localhost:3306/fashion_store?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true";
     private static final String DB_USER = "root";
-    private static final String DB_PASS = "Radhikamohan@02";
+    private static final String DB_PASS = "";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) 
