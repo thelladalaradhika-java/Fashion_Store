@@ -10,7 +10,7 @@ public class test {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/fashion_store?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC";
         String user = "root";
-        String pass = "Radhikamohan@02";
+        String pass = "";
 
         System.out.println("=== STARTING DATABASE VERIFICATION ===");
         try {
